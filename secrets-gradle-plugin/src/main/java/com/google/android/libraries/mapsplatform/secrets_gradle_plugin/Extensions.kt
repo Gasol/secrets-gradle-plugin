@@ -88,9 +88,6 @@ fun InternalBaseVariant.inject(properties: Properties, ignore: List<String>) {
 }
 
 fun String.addParenthesisIfNeeded(): String {
-    if (isEmpty()) {
-        return this
-    }
     val charArray = this.toCharArray()
     if (length > 1 && charArray[0] == '"' && charArray[charArray.size - 1] == '"') {
         return this

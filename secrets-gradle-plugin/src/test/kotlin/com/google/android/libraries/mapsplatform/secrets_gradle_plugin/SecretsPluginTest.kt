@@ -143,6 +143,7 @@ class SecretsPluginTest {
             """
             key1="value"
             key2=value2
+            empty=
         """.trimIndent()
         )
         val properties = project.rootProject.loadPropertiesFile(fileName)
@@ -151,7 +152,8 @@ class SecretsPluginTest {
 
         check(
             Pair("key1", "value"),
-            Pair("key2", "value2")
+            Pair("key2", "value2"),
+            Pair("empty", "")
         )
     }
 
